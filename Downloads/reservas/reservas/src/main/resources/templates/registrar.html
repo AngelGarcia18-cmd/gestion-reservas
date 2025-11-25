@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Reserva</title>
+    
+    <!<!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    
+</head>
+<body class="bg-gray-100">
+    
+    <div class="max-w-xl mx-auto mt-10 bg-white rounded-lg shadow-lg p-8">
+        <h1 class="text-2x1 font-bold text-blue-600 mb-6 text-center">Registrar Reserva</h1>
+        
+        <div th:if="${mensaje}"
+             class:"alerta-exito">
+            <p th:text="${mensaje}"></p>
+        </div>
+        
+        <form th:action="@{/reservas/guardar}" method="post" class="space-y-4">
+            
+            <!<!-- Nombre -->
+            <div>
+                <label class="font-semibold">Nombre Completo</label>
+                <input name="nombre" type="text" class="w-full p-2 border rounded-lg" required>
+            </div>
+            
+            <!<!-- Fecha -->
+            <div>
+                <label class="font-semibold">Fecha</label>
+                <input name="fecha" type="date" class="w-full p-2 border rounded-lg" required>
+            </div>
+            
+            <!<!-- Hora -->
+            <div>
+                <label class="font-semibold">Hora</label>
+                <input name="hora" type="time" class="w-full p-2 border rounded-lg" required>
+            </div>
+            
+            <!<!-- Cantidad personas -->
+            <div>
+                <label class="font-semibold">Cantidad de personas</label>
+                <input name="personas" type="number" min="1" class="w-full p-2 border rounded-lg" required>
+            </div>
+            
+            <!<!-- Botón -->
+            <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">guardar Reserva</button>
+            
+        </form>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

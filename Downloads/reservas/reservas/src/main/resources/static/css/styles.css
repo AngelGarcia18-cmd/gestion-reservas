@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/*HEADER */
+.header {
+    background: #4c6ef5;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* CONTENEDOR GENERAL */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* TARJETAS (Glassmorphism) */
+.card {
+    flex: 1;
+    padding: 20px;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* FORMULARIO */
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* BOTÓN PRINCIPAL */
+.btn-primary{
+    width: 100%;
+    padding: 12px;
+    background: #4c6ef5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover{
+    background: #374ad1;
+}
+
+/* TABLA */
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+thead tr{
+    background: #4c6ef5;
+    color: white;
+}
+
+td, th{
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* BOTONES DE ACCIÓN */
+.btn-edit {
+    background: #37b24d;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-delete{
+    background: #f03e3e;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* BUSCADOR */
+.search-input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.alerta-exito {
+    background: #d4edda;
+    border-left: 6px;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    color: #155724;
+    font-size: 16px;
+    font-weight: bold;
+}

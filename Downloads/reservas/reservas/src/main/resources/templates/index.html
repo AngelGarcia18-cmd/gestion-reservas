@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestión de Reservas</title>
+        
+        <script src="https://cdn.tailwindcss.com"></script>
+        <Link rel="stylesheet" href="/css/styles.css">
+    </head>
+    
+    <body class="bg-gray-100">
+        
+        <header class="bg-blue-600 text-white py-4 text-center shadow-md">
+            <h1 class="text-3x1 font-bold">Gestión de Reservas</h1>
+        </header>
+        
+        <main class="max-w-4x1 mx-auto px-4 mt-10">
+            <div class="text-right mb-6">
+                <a href="/registrar"
+                   class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"> Registrar nueva reserva
+                </a>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Listado de Reservas</h2>
+                
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border p-2">Cliente</th>
+                            <th class="border p-2">Fecha</th>
+                            <th class="border p-2">Hora</th>
+                            <th class="border p-2">Personas</th>
+                            <th class="border p-2">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservasTable">
+                        <tr th:each="r : ${reservas}">
+                            <td th:text="$
+                                {r.nombreCliente}"></td>
+                            <td th:text="${#temporals.format(r.fechaReserva, 'yyyy-MM-dd')}"></td>
+                            <td th:text="${#temporals.format(r.fechaReserva, 'HH:mm')}"></td>
+                            <td th:text="${r.numeroPersonas}"></td>
+                            <td>
+                                <button class="bg-green-500 text-white px-2 py-1 rounded">Editar</button>
+                                <button class="bg-red-500 text-white px-2 py-1 rounded">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <script src="/js/script.js"></script>
+    </body>
+</html>
+               
